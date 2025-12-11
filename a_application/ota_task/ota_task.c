@@ -11,7 +11,7 @@ extern uint8_t* http_buff_ptr;
 
 /* ====================================== STATIC DECLARATIONS ======================================= */
 static uint8_t sharedStep = 0;
-static char ota_url[128] = "http://opinion.people.com.cn/GB/n1/2018/0815/c1003-30228758.html";
+static char ota_url[64] = "http://13.212.179.167/ota/z_build/a7670c.bin";
 
 static uint32_t cur_offset = 0;
 static uint32_t chunk = 0;
