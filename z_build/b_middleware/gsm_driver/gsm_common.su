@@ -1,0 +1,6 @@
+b_middleware/gsm_driver/gsm_common.c:13:6:gsm_common_sync_at	344	static
+b_middleware/gsm_driver/gsm_common.c:77:6:gsm_common_config	344	static
+b_middleware/gsm_driver/gsm_common.c:141:6:gsm_common_check_sim	344	static
+b_middleware/gsm_driver/gsm_common.c:215:6:gsm_common_check_network	344	static
+b_middleware/gsm_driver/gsm_common.c:278:6:gsm_common_check_gprs	344	static
+b_middleware/gsm_driver/gsm_common.c:355:6:gsm_common_init_pdp	360	static

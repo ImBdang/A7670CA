@@ -1,0 +1,9 @@
+c_hardware/Device/src/tiny_printf.c:80:6:ts_itoa	32	static
+c_hardware/Device/src/tiny_printf.c:104:5:ts_formatstring	40	static
+c_hardware/Device/src/tiny_printf.c:170:5:ts_formatlength	24	static
+/home/bdang/toolchains/gcc-arm-none-eabi-14.3/arm-none-eabi/include/stdio.h:308:5:siprintf	28	static
+/home/bdang/toolchains/gcc-arm-none-eabi-14.3/arm-none-eabi/include/stdio.h:300:5:fiprintf	52	dynamic
+/home/bdang/toolchains/gcc-arm-none-eabi-14.3/arm-none-eabi/include/stdio.h:304:5:iprintf	48	dynamic
+/home/bdang/toolchains/gcc-arm-none-eabi-14.3/arm-none-eabi/include/stdio.h:221:5:fputs	32	static
+/home/bdang/toolchains/gcc-arm-none-eabi-14.3/arm-none-eabi/include/stdio.h:227:5:puts	32	static
+/home/bdang/toolchains/gcc-arm-none-eabi-14.3/arm-none-eabi/include/stdio.h:230:8:fwrite	24	static

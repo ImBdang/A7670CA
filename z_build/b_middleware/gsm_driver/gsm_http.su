@@ -1,0 +1,5 @@
+b_middleware/gsm_driver/gsm_http.c:15:6:gsm_http_init	344	static
+b_middleware/gsm_driver/gsm_http.c:68:6:gsm_http_term	344	static
+b_middleware/gsm_driver/gsm_http.c:121:6:gsm_http_set_url	352	static
+b_middleware/gsm_driver/gsm_http.c:177:6:gsm_http_action	368	static
+b_middleware/gsm_driver/gsm_http.c:237:6:gsm_http_read	416	static

@@ -1,0 +1,5 @@
+c_hardware/CMSIS/inc/core_cm3.h:1014:22:NVIC_SetPriority	16	static
+c_hardware/CMSIS/inc/core_cm3.h:1139:26:SysTick_Config	16	static
+c_hardware/Device/src/systick.c:5:6:systick_init	24	static
+c_hardware/Device/src/systick.c:16:6:delay_ms	24	static
+c_hardware/Device/src/systick.c:21:10:get_systick	4	static

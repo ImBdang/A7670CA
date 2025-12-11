@@ -1,0 +1,8 @@
+c_hardware/Device/src/a7670c_hardware.c:14:6:A7670C_USART_Init	24	static
+c_hardware/Device/src/a7670c_hardware.c:30:6:A7670C_TX_Init	16	static
+c_hardware/Device/src/a7670c_hardware.c:40:6:A7670C_RX_Init	16	static
+c_hardware/Device/src/a7670c_hardware.c:49:6:A7670C_USART_IRQ_Init	32	static
+c_hardware/Device/src/a7670c_hardware.c:72:6:A7670C_PWK_Init	16	static
+c_hardware/Device/src/a7670c_hardware.c:84:6:A7670C_NET_Init	16	static
+c_hardware/Device/src/a7670c_hardware.c:94:6:A7670C_PEN_Init	16	static
+c_hardware/Device/src/a7670c_hardware.c:107:6:a7670c_hardware_init	8	static

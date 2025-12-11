@@ -1,0 +1,5 @@
+b_middleware/gsm_driver/gsm_entity.c:18:17:get_sim_state	4	static
+b_middleware/gsm_driver/gsm_entity.c:23:22:get_sim_creg_state	4	static
+b_middleware/gsm_driver/gsm_entity.c:28:6:set_sim_state	16	static
+b_middleware/gsm_driver/gsm_entity.c:33:6:set_sim_creg_state	16	static
+b_middleware/gsm_driver/gsm_entity.c:38:6:set_http_action	16	static

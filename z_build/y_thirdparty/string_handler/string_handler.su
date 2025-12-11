@@ -1,0 +1,7 @@
+y_thirdparty/string_handler/string_handler.c:10:10:fast_atoi	24	static
+y_thirdparty/string_handler/string_handler.c:25:6:fast_itoa	40	static
+y_thirdparty/string_handler/string_handler.c:49:10:parse_ota_size	24	static
+y_thirdparty/string_handler/string_handler.c:57:6:gsm_parse_cpin	24	static
+y_thirdparty/string_handler/string_handler.c:72:6:gsm_parse_creg	24	static
+y_thirdparty/string_handler/string_handler.c:96:6:gsm_parse_httpget	24	static
+y_thirdparty/string_handler/string_handler.c:116:10:gsm_parse_httpread_len	16	static

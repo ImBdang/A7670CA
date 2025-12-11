@@ -1,0 +1,12 @@
+b_middleware/w25q32_driver/w25q32_driver.c:12:6:W25Q32_ReadID	16	static
+b_middleware/w25q32_driver/w25q32_driver.c:25:9:W25Q32_ReadStatusReg	16	static
+b_middleware/w25q32_driver/w25q32_driver.c:37:6:W25Q32_WaitBusy	8	static
+b_middleware/w25q32_driver/w25q32_driver.c:45:6:W25Q32_WriteEnable	8	static
+b_middleware/w25q32_driver/w25q32_driver.c:53:6:W25Q32_WriteDisable	8	static
+b_middleware/w25q32_driver/w25q32_driver.c:63:6:W25Q32_EraseSector	16	static
+b_middleware/w25q32_driver/w25q32_driver.c:79:6:W25Q32_EraseChip	8	static
+b_middleware/w25q32_driver/w25q32_driver.c:98:6:W25Q32_WritePage	32	static
+b_middleware/w25q32_driver/w25q32_driver.c:124:6:W25Q32_WriteData	40	static
+b_middleware/w25q32_driver/w25q32_driver.c:147:6:W25Q32_ReadData	32	static
+b_middleware/w25q32_driver/w25q32_driver.c:164:6:W25Q32_PowerDown	8	static
+b_middleware/w25q32_driver/w25q32_driver.c:173:6:W25Q32_WakeUp	8	static

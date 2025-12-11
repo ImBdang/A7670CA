@@ -1,0 +1,2 @@
+c_hardware/Device/src/tty_hardware.c:7:13:USART_Debugger_Init	32	static
+c_hardware/Device/src/tty_hardware.c:34:6:tty_hardware_init	8	static

@@ -1,0 +1,2 @@
+c_hardware/Device/src/w25q32_hardware.c:13:6:W25Q32_SPI_Init	48	static
+c_hardware/Device/src/w25q32_hardware.c:56:6:w25q32_hardware_init	8	static

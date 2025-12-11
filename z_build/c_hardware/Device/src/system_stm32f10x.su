@@ -1,0 +1,5 @@
+c_hardware/Device/src/system_stm32f10x.c:218:6:SystemInit	8	static
+c_hardware/Device/src/system_stm32f10x.c:312:6:SystemCoreClockUpdate	24	static
+c_hardware/Device/src/system_stm32f10x.c:424:6:Clock_72MHz_HSE_Init	16	static
+c_hardware/Device/src/system_stm32f10x.c:455:13:SetSysClock	8	static
+c_hardware/Device/src/system_stm32f10x.c:1023:13:SetSysClockTo72	16	static

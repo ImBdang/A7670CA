@@ -1,0 +1,5 @@
+b_middleware/gsm_driver/gsm_event.c:22:6:event_queue_clear	16	static
+b_middleware/gsm_driver/gsm_event.c:34:6:event_queue_is_empty	16	static
+b_middleware/gsm_driver/gsm_event.c:45:6:event_queue_is_full	16	static
+b_middleware/gsm_driver/gsm_event.c:59:6:push_event	16	static
+b_middleware/gsm_driver/gsm_event.c:93:6:pop_event	16	static
