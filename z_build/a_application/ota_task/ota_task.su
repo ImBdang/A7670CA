@@ -1,4 +1,4 @@
 c_hardware/CMSIS/inc/core_cm3.h:1107:22:NVIC_SystemReset	4	static
 a_application/ota_task/ota_task.c:23:6:ota_process	16	static
-a_application/ota_task/ota_task.c:94:13:set_fw_size	16	static
-a_application/ota_task/ota_task.c:101:13:set_fw_flag	16	static
+a_application/ota_task/ota_task.c:95:13:set_fw_size	16	static
+a_application/ota_task/ota_task.c:102:13:set_fw_flag	16	static

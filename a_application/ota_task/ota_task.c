@@ -84,6 +84,7 @@ void ota_process(void)
             {
                 sharedStep = 0;
                 cur_task = 0;
+                
                 SCB->VTOR = 0x08000000;
                 NVIC_SystemReset();
             }

@@ -15,6 +15,7 @@ current_task_t cur_task = IDLE;
 
 int main(void)
 {
+    __enable_irq();
     Clock_72MHz_HSE_Init();
     hardware_init();
     a7670c_hardware_init();
@@ -22,6 +23,7 @@ int main(void)
     DEBUG_PRINT("APP RUN\r\n");
     //GPIO_ResetBits(GPIOC, GPIO_Pin_13);
     GPIO_SetBits(GPIOC, GPIO_Pin_13);
+    cur_task = 1;
     while(1){
         bool tmp = false;
         GSM_Manager();

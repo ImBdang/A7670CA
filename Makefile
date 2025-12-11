@@ -214,7 +214,7 @@ flash: $(BUILD_DIR)/$(PROJECT).bin
 	@echo "====================================="
 	@echo "Flashing $(PROJECT).bin to STM32..."
 	@echo "====================================="
-	st-flash write $< 0x8000000
+	st-flash write $< 0x08004000
 
 # Clean build directory
 clean:
