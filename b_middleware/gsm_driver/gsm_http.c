@@ -244,9 +244,9 @@ bool gsm_http_read(uint32_t offset, uint32_t chunk)
     {
         case 0: 
         {
-            char cmd_buf[32];
-            char offset_str[12];
-            char chunk_str[12];
+            static char cmd_buf[32];
+            static char offset_str[12];
+            static char chunk_str[12];
 
             fast_itoa(offset, offset_str);
             fast_itoa(chunk, chunk_str);

@@ -73,26 +73,26 @@ int main(void)
     a7670c_hardware_init();
     gsm_init();
     DEBUG_PRINT("APP RUN\r\n");
-    W25Q32_CheckFirmware(21512);
+    // W25Q32_CheckFirmware(21512);
     //GPIO_ResetBits(GPIOC, GPIO_Pin_13);
     GPIO_SetBits(GPIOC, GPIO_Pin_13);
     cur_task = 1;
     while(1){
-        // bool tmp = false;
-        // GSM_Manager();
-        // if (gsm_state == GSM_STATE_READY)
-        // {
-        //     switch (cur_task)
-        //     {   
-        //         case OTA:
-        //             ota_process();
-        //             break;
+        bool tmp = false;
+        GSM_Manager();
+        if (gsm_state == GSM_STATE_READY)
+        {
+            switch (cur_task)
+            {   
+                case OTA:
+                    ota_process();
+                    break;
 
-        //         case IDLE:
-        //             break;
-        //     }
-        //     delay_ms(150);
-        // }
+                case IDLE:
+                    break;
+            }
+            delay_ms(150);
+        }
     }
     
     return 0;
