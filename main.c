@@ -58,6 +58,22 @@ void W25Q32_CheckFirmware(uint32_t fw_size)
     DEBUG_PRINT("========== END CHECK ==========\r\n\r\n");
 }
 
+extern uint32_t __stack_chk;
+
+void dbg_dump_sp(void)
+{
+    register uint32_t sp_val __asm("sp");
+    static uint32_t last = 0;
+
+    if ((sp_val & 0xFF000000) != 0x20000000) {
+        DEBUG_PRINT("SP CORRUPT!!! sp=0x%08lX\r\n", sp_val);
+        while (1);
+    }
+
+    if (last == 0) {
+        last = sp_val;
+    }
+}
 
 
 current_task_t cur_task = IDLE;
@@ -79,6 +95,7 @@ int main(void)
     cur_task = 1;
     __enable_irq();
     while(1){
+        dbg_dump_sp();
         bool tmp = false;
         GSM_Manager();
         if (gsm_state == GSM_STATE_READY)
