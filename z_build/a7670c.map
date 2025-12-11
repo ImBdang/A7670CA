@@ -2992,7 +2992,7 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
                 0x08004000                g_pfnVectors
                 0x0800410c                        . = ALIGN (0x4)
 
-.text           0x0800410c     0x48a4
+.text           0x0800410c     0x48b4
                 0x0800410c                        . = ALIGN (0x4)
  *(.text)
  .text          0x0800410c       0x10 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strlen.o)
@@ -3359,232 +3359,232 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
  .text.NVIC_SystemReset
                 0x08007be8       0x2c z_build/a_application/ota_task/ota_task.o
  .text.ota_process
-                0x08007c14      0x1e4 z_build/a_application/ota_task/ota_task.o
+                0x08007c14      0x1f4 z_build/a_application/ota_task/ota_task.o
                 0x08007c14                ota_process
  .text.set_fw_size
-                0x08007df8       0x2c z_build/a_application/ota_task/ota_task.o
+                0x08007e08       0x2c z_build/a_application/ota_task/ota_task.o
  .text.set_fw_flag
-                0x08007e24       0x3c z_build/a_application/ota_task/ota_task.o
- .text.main     0x08007e60       0x64 z_build/main.o
-                0x08007e60                main
+                0x08007e34       0x3c z_build/a_application/ota_task/ota_task.o
+ .text.main     0x08007e70       0x64 z_build/main.o
+                0x08007e70                main
  .text.Reset_Handler
-                0x08007ec4       0x50 z_build/startup/startup.o
-                0x08007ec4                Reset_Handler
+                0x08007ed4       0x50 z_build/startup/startup.o
+                0x08007ed4                Reset_Handler
  .text.Default_Handler
-                0x08007f14        0x2 z_build/startup/startup.o
-                0x08007f14                EXTI2_IRQHandler
-                0x08007f14                TIM1_CC_IRQHandler
-                0x08007f14                PVD_IRQHandler
-                0x08007f14                PendSV_Handler
-                0x08007f14                EXTI3_IRQHandler
-                0x08007f14                EXTI0_IRQHandler
-                0x08007f14                I2C2_EV_IRQHandler
-                0x08007f14                ADC1_2_IRQHandler
-                0x08007f14                SPI1_IRQHandler
-                0x08007f14                TAMPER_IRQHandler
-                0x08007f14                DMA1_Channel4_IRQHandler
-                0x08007f14                USART3_IRQHandler
-                0x08007f14                RTC_IRQHandler
-                0x08007f14                DMA1_Channel7_IRQHandler
-                0x08007f14                CAN1_RX1_IRQHandler
-                0x08007f14                TIM4_IRQHandler
-                0x08007f14                I2C1_EV_IRQHandler
-                0x08007f14                DMA1_Channel6_IRQHandler
-                0x08007f14                TIM3_IRQHandler
-                0x08007f14                RCC_IRQHandler
-                0x08007f14                TIM1_TRG_COM_IRQHandler
-                0x08007f14                DMA1_Channel1_IRQHandler
-                0x08007f14                Default_Handler
-                0x08007f14                EXTI15_10_IRQHandler
-                0x08007f14                EXTI9_5_IRQHandler
-                0x08007f14                SPI2_IRQHandler
-                0x08007f14                SVC_Handler
-                0x08007f14                DMA1_Channel5_IRQHandler
-                0x08007f14                EXTI4_IRQHandler
-                0x08007f14                USB_LP_CAN1_RX0_IRQHandler
-                0x08007f14                USB_HP_CAN1_TX_IRQHandler
-                0x08007f14                DMA1_Channel3_IRQHandler
-                0x08007f14                TIM1_UP_IRQHandler
-                0x08007f14                WWDG_IRQHandler
-                0x08007f14                TIM2_IRQHandler
-                0x08007f14                TIM1_BRK_IRQHandler
-                0x08007f14                EXTI1_IRQHandler
-                0x08007f14                RTCAlarm_IRQHandler
-                0x08007f14                USART2_IRQHandler
-                0x08007f14                I2C2_ER_IRQHandler
-                0x08007f14                DMA1_Channel2_IRQHandler
-                0x08007f14                CAN1_SCE_IRQHandler
-                0x08007f14                FLASH_IRQHandler
-                0x08007f14                I2C1_ER_IRQHandler
-                0x08007f14                USBWakeUp_IRQHandler
- *fill*         0x08007f16        0x2 
+                0x08007f24        0x2 z_build/startup/startup.o
+                0x08007f24                EXTI2_IRQHandler
+                0x08007f24                TIM1_CC_IRQHandler
+                0x08007f24                PVD_IRQHandler
+                0x08007f24                PendSV_Handler
+                0x08007f24                EXTI3_IRQHandler
+                0x08007f24                EXTI0_IRQHandler
+                0x08007f24                I2C2_EV_IRQHandler
+                0x08007f24                ADC1_2_IRQHandler
+                0x08007f24                SPI1_IRQHandler
+                0x08007f24                TAMPER_IRQHandler
+                0x08007f24                DMA1_Channel4_IRQHandler
+                0x08007f24                USART3_IRQHandler
+                0x08007f24                RTC_IRQHandler
+                0x08007f24                DMA1_Channel7_IRQHandler
+                0x08007f24                CAN1_RX1_IRQHandler
+                0x08007f24                TIM4_IRQHandler
+                0x08007f24                I2C1_EV_IRQHandler
+                0x08007f24                DMA1_Channel6_IRQHandler
+                0x08007f24                TIM3_IRQHandler
+                0x08007f24                RCC_IRQHandler
+                0x08007f24                TIM1_TRG_COM_IRQHandler
+                0x08007f24                DMA1_Channel1_IRQHandler
+                0x08007f24                Default_Handler
+                0x08007f24                EXTI15_10_IRQHandler
+                0x08007f24                EXTI9_5_IRQHandler
+                0x08007f24                SPI2_IRQHandler
+                0x08007f24                SVC_Handler
+                0x08007f24                DMA1_Channel5_IRQHandler
+                0x08007f24                EXTI4_IRQHandler
+                0x08007f24                USB_LP_CAN1_RX0_IRQHandler
+                0x08007f24                USB_HP_CAN1_TX_IRQHandler
+                0x08007f24                DMA1_Channel3_IRQHandler
+                0x08007f24                TIM1_UP_IRQHandler
+                0x08007f24                WWDG_IRQHandler
+                0x08007f24                TIM2_IRQHandler
+                0x08007f24                TIM1_BRK_IRQHandler
+                0x08007f24                EXTI1_IRQHandler
+                0x08007f24                RTCAlarm_IRQHandler
+                0x08007f24                USART2_IRQHandler
+                0x08007f24                I2C2_ER_IRQHandler
+                0x08007f24                DMA1_Channel2_IRQHandler
+                0x08007f24                CAN1_SCE_IRQHandler
+                0x08007f24                FLASH_IRQHandler
+                0x08007f24                I2C1_ER_IRQHandler
+                0x08007f24                USBWakeUp_IRQHandler
+ *fill*         0x08007f26        0x2 
  .text.snprintf
-                0x08007f18       0x6c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
-                0x08007f18                snprintf
-                0x08007f18                sniprintf
+                0x08007f28       0x6c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
+                0x08007f28                snprintf
+                0x08007f28                sniprintf
  .text._vsnprintf_r
-                0x08007f84       0x5c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-vsnprintf.o)
-                0x08007f84                _vsnprintf_r
-                0x08007f84                _vsniprintf_r
+                0x08007f94       0x5c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-vsnprintf.o)
+                0x08007f94                _vsnprintf_r
+                0x08007f94                _vsniprintf_r
  .text.vsnprintf
-                0x08007fe0       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-vsnprintf.o)
-                0x08007fe0                vsnprintf
-                0x08007fe0                vsniprintf
- .text.memset   0x08007ffc       0x10 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
-                0x08007ffc                memset
- .text.strncmp  0x0800800c       0x24 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strncmp.o)
-                0x0800800c                strncmp
- .text.strstr   0x08008030       0x2c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strstr.o)
-                0x08008030                strstr
+                0x08007ff0       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-vsnprintf.o)
+                0x08007ff0                vsnprintf
+                0x08007ff0                vsniprintf
+ .text.memset   0x0800800c       0x10 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x0800800c                memset
+ .text.strncmp  0x0800801c       0x24 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strncmp.o)
+                0x0800801c                strncmp
+ .text.strstr   0x08008040       0x2c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strstr.o)
+                0x08008040                strstr
  .text.__libc_init_array
-                0x0800805c       0x48 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
-                0x0800805c                __libc_init_array
+                0x0800806c       0x48 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
+                0x0800806c                __libc_init_array
  .text.__retarget_lock_acquire_recursive
-                0x080080a4        0x2 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-lock.o)
-                0x080080a4                __retarget_lock_acquire_recursive
+                0x080080b4        0x2 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-lock.o)
+                0x080080b4                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x080080a6        0x2 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-lock.o)
-                0x080080a6                __retarget_lock_release_recursive
- .text.strcpy   0x080080a8       0x10 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strcpy.o)
-                0x080080a8                strcpy
- .text.memcpy   0x080080b8       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy-stub.o)
-                0x080080b8                memcpy
- .text._free_r  0x080080d4       0x90 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-freer.o)
-                0x080080d4                _free_r
+                0x080080b6        0x2 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-lock.o)
+                0x080080b6                __retarget_lock_release_recursive
+ .text.strcpy   0x080080b8       0x10 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strcpy.o)
+                0x080080b8                strcpy
+ .text.memcpy   0x080080c8       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memcpy-stub.o)
+                0x080080c8                memcpy
+ .text._free_r  0x080080e4       0x90 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-freer.o)
+                0x080080e4                _free_r
  .text.sbrk_aligned
-                0x08008164       0x44 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mallocr.o)
+                0x08008174       0x44 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x080081a8      0x100 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mallocr.o)
-                0x080081a8                _malloc_r
+                0x080081b8      0x100 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mallocr.o)
+                0x080081b8                _malloc_r
  .text.__malloc_lock
-                0x080082a8        0xc /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mlock.o)
-                0x080082a8                __malloc_lock
+                0x080082b8        0xc /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mlock.o)
+                0x080082b8                __malloc_lock
  .text.__malloc_unlock
-                0x080082b4        0xc /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mlock.o)
-                0x080082b4                __malloc_unlock
+                0x080082c4        0xc /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mlock.o)
+                0x080082c4                __malloc_unlock
  .text.__ssputs_r
-                0x080082c0       0xc0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
-                0x080082c0                __ssputs_r
+                0x080082d0       0xc0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x080082d0                __ssputs_r
  .text._svfprintf_r
-                0x08008380      0x1f0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
-                0x08008380                _svfprintf_r
-                0x08008380                _svfiprintf_r
+                0x08008390      0x1f0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x08008390                _svfprintf_r
+                0x08008390                _svfiprintf_r
  .text._printf_common
-                0x08008570       0xe4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08008570                _printf_common
+                0x08008580       0xe4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08008580                _printf_common
  .text._printf_i
-                0x08008654      0x24c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08008654                _printf_i
- .text.memmove  0x080088a0       0x32 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memmove.o)
-                0x080088a0                memmove
- *fill*         0x080088d2        0x2 
- .text._sbrk_r  0x080088d4       0x20 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-sbrkr.o)
-                0x080088d4                _sbrk_r
- .text.memchr   0x080088f4       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memchr-stub.o)
-                0x080088f4                memchr
+                0x08008664      0x24c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08008664                _printf_i
+ .text.memmove  0x080088b0       0x32 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memmove.o)
+                0x080088b0                memmove
+ *fill*         0x080088e2        0x2 
+ .text._sbrk_r  0x080088e4       0x20 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-sbrkr.o)
+                0x080088e4                _sbrk_r
+ .text.memchr   0x08008904       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memchr-stub.o)
+                0x08008904                memchr
  .text._realloc_r
-                0x08008910       0x5c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-reallocr.o)
-                0x08008910                _realloc_r
+                0x08008920       0x5c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-reallocr.o)
+                0x08008920                _realloc_r
  .text._malloc_usable_size_r
-                0x0800896c       0x10 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-msizer.o)
-                0x0800896c                _malloc_usable_size_r
- .text._sbrk    0x0800897c       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
-                0x0800897c                _sbrk
+                0x0800897c       0x10 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-msizer.o)
+                0x0800897c                _malloc_usable_size_r
+ .text._sbrk    0x0800898c       0x1c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+                0x0800898c                _sbrk
  *(.glue_7)
- .glue_7        0x08008998        0x0 linker stubs
+ .glue_7        0x080089a8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08008998        0x0 linker stubs
+ .glue_7t       0x080089a8        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08008998        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x080089a8        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x08008998        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
-                0x08008998                _init
- .init          0x0800899c        0x8 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
+ .init          0x080089a8        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
+                0x080089a8                _init
+ .init          0x080089ac        0x8 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x080089a4        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
-                0x080089a4                _fini
- .fini          0x080089a8        0x8 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
-                0x080089b0                        . = ALIGN (0x4)
-                0x080089b0                        _etext = .
+ .fini          0x080089b4        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crti.o
+                0x080089b4                _fini
+ .fini          0x080089b8        0x8 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
+                0x080089c0                        . = ALIGN (0x4)
+                0x080089c0                        _etext = .
 
-.vfp11_veneer   0x080089b0        0x0
- .vfp11_veneer  0x080089b0        0x0 linker stubs
+.vfp11_veneer   0x080089c0        0x0
+ .vfp11_veneer  0x080089c0        0x0 linker stubs
 
-.v4_bx          0x080089b0        0x0
- .v4_bx         0x080089b0        0x0 linker stubs
+.v4_bx          0x080089c0        0x0
+ .v4_bx         0x080089c0        0x0 linker stubs
 
-.iplt           0x080089b0        0x0
- .iplt          0x080089b0        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x080089c0        0x0
+ .iplt          0x080089c0        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x080089b0      0x77c
-                0x080089b0                        . = ALIGN (0x4)
+.rodata         0x080089c0      0x77c
+                0x080089c0                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x080089b0       0x1b z_build/y_thirdparty/string_handler/string_handler.o
- *fill*         0x080089cb        0x1 
- .rodata        0x080089cc       0x1e z_build/c_hardware/Device/src/w25q32_hardware.o
- *fill*         0x080089ea        0x2 
- .rodata        0x080089ec      0x18f z_build/b_middleware/gsm_driver/gsm_at_engine.o
- *fill*         0x08008b7b        0x1 
- .rodata        0x08008b7c      0x157 z_build/b_middleware/gsm_driver/gsm.o
- *fill*         0x08008cd3        0x1 
- .rodata        0x08008cd4       0x34 z_build/b_middleware/gsm_driver/gsm_cb.o
- .rodata        0x08008d08      0x1b9 z_build/b_middleware/gsm_driver/gsm_common.o
- *fill*         0x08008ec1        0x3 
- .rodata        0x08008ec4      0x195 z_build/b_middleware/gsm_driver/gsm_http.o
- *fill*         0x08009059        0x3 
- .rodata        0x0800905c       0x69 z_build/a_application/ota_task/ota_task.o
- *fill*         0x080090c5        0x3 
- .rodata        0x080090c8        0xa z_build/main.o
+ .rodata        0x080089c0       0x1b z_build/y_thirdparty/string_handler/string_handler.o
+ *fill*         0x080089db        0x1 
+ .rodata        0x080089dc       0x1e z_build/c_hardware/Device/src/w25q32_hardware.o
+ *fill*         0x080089fa        0x2 
+ .rodata        0x080089fc      0x18f z_build/b_middleware/gsm_driver/gsm_at_engine.o
+ *fill*         0x08008b8b        0x1 
+ .rodata        0x08008b8c      0x157 z_build/b_middleware/gsm_driver/gsm.o
+ *fill*         0x08008ce3        0x1 
+ .rodata        0x08008ce4       0x34 z_build/b_middleware/gsm_driver/gsm_cb.o
+ .rodata        0x08008d18      0x1b9 z_build/b_middleware/gsm_driver/gsm_common.o
+ *fill*         0x08008ed1        0x3 
+ .rodata        0x08008ed4      0x195 z_build/b_middleware/gsm_driver/gsm_http.o
+ *fill*         0x08009069        0x3 
+ .rodata        0x0800906c       0x69 z_build/a_application/ota_task/ota_task.o
+ *fill*         0x080090d5        0x3 
+ .rodata        0x080090d8        0xa z_build/main.o
  *(.rodata*)
- *fill*         0x080090d2        0x2 
+ *fill*         0x080090e2        0x2 
  .rodata.AHBPrescTable
-                0x080090d4       0x10 z_build/c_hardware/Device/src/system_stm32f10x.o
-                0x080090d4                AHBPrescTable
+                0x080090e4       0x10 z_build/c_hardware/Device/src/system_stm32f10x.o
+                0x080090e4                AHBPrescTable
  .rodata.APBAHBPrescTable
-                0x080090e4       0x10 z_build/c_hardware/SPL/src/stm32f10x_rcc.o
+                0x080090f4       0x10 z_build/c_hardware/SPL/src/stm32f10x_rcc.o
  .rodata.ADCPrescTable
-                0x080090f4        0x4 z_build/c_hardware/SPL/src/stm32f10x_rcc.o
+                0x08009104        0x4 z_build/c_hardware/SPL/src/stm32f10x_rcc.o
  .rodata._svfprintf_r.str1.1
-                0x080090f8       0x33 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x08009108       0x33 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
                                  0x11 (size before relaxing)
  .rodata._printf_i.str1.1
-                0x0800912b       0x22 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08009150                        . = ALIGN (0x4)
- *fill*         0x0800912b        0x1 
+                0x0800913b       0x22 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08009160                        . = ALIGN (0x4)
+ *fill*         0x0800913b        0x1 
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0800912c        0x8
-                0x0800912c                        __exidx_start = .
+.ARM            0x0800913c        0x8
+                0x0800913c                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800912c        0x8 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strlen.o)
-                0x08009134                        __exidx_end = .
+ .ARM.exidx     0x0800913c        0x8 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-strlen.o)
+                0x08009144                        __exidx_end = .
 
-.rel.dyn        0x08009134        0x0
- .rel.iplt      0x08009134        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x08009144        0x0
+ .rel.iplt      0x08009144        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.preinit_array  0x08009134        0x0
-                0x08009134                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08009144        0x0
+                0x08009144                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08009134                        PROVIDE (__preinit_array_end = .)
+                0x08009144                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08009134        0x4
-                0x08009134                        PROVIDE (__init_array_start = .)
+.init_array     0x08009144        0x4
+                0x08009144                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08009134        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x08009138                        PROVIDE (__init_array_end = .)
+ .init_array    0x08009144        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x08009148                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x08009138        0x4
+.fini_array     0x08009148        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08009138        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x08009148        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0800913c                        _sidata = LOADADDR (.data)
+                0x0800914c                        _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x2bc load address 0x0800913c
+.data           0x20000000      0x2bc load address 0x0800914c
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -3614,17 +3614,17 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
                 0x200002bc                        _edata = .
 
 .tm_clone_table
-                0x200002bc        0x0 load address 0x080093f8
+                0x200002bc        0x0 load address 0x08009408
  .tm_clone_table
                 0x200002bc        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
  .tm_clone_table
                 0x200002bc        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtend.o
 
-.igot.plt       0x200002bc        0x0 load address 0x080093f8
+.igot.plt       0x200002bc        0x0 load address 0x08009408
  .igot.plt      0x200002bc        0x0 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x200002bc                        . = ALIGN (0x4)
 
-.bss            0x200002bc      0xcf0 load address 0x080093f8
+.bss            0x200002bc      0xcf0 load address 0x08009408
                 0x200002bc                        _sbss = .
                 0x200002bc                        __bss_start__ = _sbss
  *(.bss)
@@ -3712,7 +3712,7 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
                 0x20000fac                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000fac      0x100 load address 0x080093f8
+                0x20000fac      0x100 load address 0x08009408
                 0x20000fac                        . = ALIGN (0x4)
                 0x20000fac                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
@@ -4141,7 +4141,7 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
  .debug_macro   0x0000f581       0x28 z_build/a_application/ota_task/ota_task.o
  .debug_macro   0x0000f5a9      0x324 z_build/main.o
 
-.debug_line     0x00000000     0xb21e
+.debug_line     0x00000000     0xb224
  .debug_line    0x00000000      0xa08 z_build/y_thirdparty/lwrb/lwrb.o
  .debug_line    0x00000a08      0x5b6 z_build/y_thirdparty/string_handler/string_handler.o
  .debug_line    0x00000fbe      0x450 z_build/c_hardware/Device/src/a7670c_hardware.o
@@ -4169,9 +4169,9 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
  .debug_line    0x000091b1      0x5ab z_build/b_middleware/gsm_driver/gsm_entity.o
  .debug_line    0x0000975c      0x44e z_build/b_middleware/gsm_driver/gsm_event.o
  .debug_line    0x00009baa      0x83c z_build/b_middleware/gsm_driver/gsm_http.o
- .debug_line    0x0000a3e6      0x751 z_build/a_application/ota_task/ota_task.o
- .debug_line    0x0000ab37      0x66f z_build/main.o
- .debug_line    0x0000b1a6       0x78 z_build/startup/startup.o
+ .debug_line    0x0000a3e6      0x757 z_build/a_application/ota_task/ota_task.o
+ .debug_line    0x0000ab3d      0x66f z_build/main.o
+ .debug_line    0x0000b1ac       0x78 z_build/startup/startup.o
 
 .debug_str      0x00000000    0x43cb9
  .debug_str     0x00000000    0x43cb9 z_build/y_thirdparty/lwrb/lwrb.o
@@ -4203,7 +4203,7 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
  .debug_str     0x00043cb9    0x3ae93 z_build/b_middleware/gsm_driver/gsm_event.o
  .debug_str     0x00043cb9    0x40019 z_build/b_middleware/gsm_driver/gsm_http.o
  .debug_str     0x00043cb9    0x40035 z_build/a_application/ota_task/ota_task.o
- .debug_str     0x00043cb9    0x3ff93 z_build/main.o
+ .debug_str     0x00043cb9    0x3ff91 z_build/main.o
  .debug_str     0x00043cb9       0x67 z_build/startup/startup.o
 
 .comment        0x00000000       0x46
@@ -4399,10 +4399,10 @@ GPIO_ReadInputDataBit                             z_build/c_hardware/SPL/src/stm
 GPIO_ReadOutputData                               z_build/c_hardware/SPL/src/stm32f10x_gpio.o
 GPIO_ReadOutputDataBit                            z_build/c_hardware/SPL/src/stm32f10x_gpio.o
 GPIO_ResetBits                                    z_build/c_hardware/SPL/src/stm32f10x_gpio.o
-                                                  z_build/main.o
                                                   z_build/b_middleware/gsm_driver/gsm.o
                                                   z_build/b_middleware/w25q32_driver/w25q32_driver.o
 GPIO_SetBits                                      z_build/c_hardware/SPL/src/stm32f10x_gpio.o
+                                                  z_build/main.o
                                                   z_build/b_middleware/gsm_driver/gsm.o
                                                   z_build/b_middleware/w25q32_driver/w25q32_driver.o
                                                   z_build/c_hardware/Device/src/w25q32_hardware.o
