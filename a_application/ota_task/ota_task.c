@@ -78,13 +78,13 @@ void ota_process(void)
                 }
             }
             break;
-
-        case 6:
+        case 5:
             tmp = gsm_http_term();
             if (tmp)
             {
                 sharedStep = 0;
                 cur_task = 0;
+                NVIC_SystemReset();
             }
 
             break;
