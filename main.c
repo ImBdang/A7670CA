@@ -8,6 +8,58 @@
 #include "task_config.h"
 #include "ota_task.h"
 
+void W25Q32_DumpFirst128(void)
+{
+    uint8_t buf[128];
+
+    W25Q32_ReadData(0x000000, buf, 128);
+
+    DEBUG_PRINT("\r\n===== W25Q32 FIRST 128 BYTES =====\r\n");
+
+    for (int i = 0; i < 128; i++) {
+        DEBUG_PRINT("%02X ", buf[i]);
+        if ((i + 1) % 16 == 0) DEBUG_PRINT("\r\n");
+    }
+
+    DEBUG_PRINT("===== END FIRST 128 =====\r\n\r\n");
+}
+
+
+void W25Q32_DumpLast128(uint32_t fw_size)
+{
+    uint8_t buf[128];
+
+    if (fw_size < 128) {
+        DEBUG_PRINT("FW too small to dump last 128 bytes!\r\n");
+        return;
+    }
+
+    uint32_t addr = fw_size - 128;
+
+    W25Q32_ReadData(addr, buf, 128);
+
+    DEBUG_PRINT("===== W25Q32 LAST 128 BYTES (addr 0x%06lX) =====\r\n", addr);
+
+    for (int i = 0; i < 128; i++) {
+        DEBUG_PRINT("%02X ", buf[i]);
+        if ((i + 1) % 16 == 0) DEBUG_PRINT("\r\n");
+    }
+
+    DEBUG_PRINT("===== END LAST 128 =====\r\n\r\n");
+}
+
+void W25Q32_CheckFirmware(uint32_t fw_size)
+{
+    DEBUG_PRINT("\r\n========== CHECKING W25Q32 FIRMWARE ==========\r\n");
+
+    W25Q32_DumpFirst128();
+    W25Q32_DumpLast128(fw_size);
+
+    DEBUG_PRINT("========== END CHECK ==========\r\n\r\n");
+}
+
+
+
 current_task_t cur_task = IDLE;
 
 /* ====================================== EXTERNAL VARIABLES ======================================= */
@@ -21,25 +73,26 @@ int main(void)
     a7670c_hardware_init();
     gsm_init();
     DEBUG_PRINT("APP RUN\r\n");
+    W25Q32_CheckFirmware(21512);
     //GPIO_ResetBits(GPIOC, GPIO_Pin_13);
     GPIO_SetBits(GPIOC, GPIO_Pin_13);
     cur_task = 1;
     while(1){
-        bool tmp = false;
-        GSM_Manager();
-        if (gsm_state == GSM_STATE_READY)
-        {
-            switch (cur_task)
-            {   
-                case OTA:
-                    ota_process();
-                    break;
+        // bool tmp = false;
+        // GSM_Manager();
+        // if (gsm_state == GSM_STATE_READY)
+        // {
+        //     switch (cur_task)
+        //     {   
+        //         case OTA:
+        //             ota_process();
+        //             break;
 
-                case IDLE:
-                    break;
-            }
-            delay_ms(150);
-        }
+        //         case IDLE:
+        //             break;
+        //     }
+        //     delay_ms(150);
+        // }
     }
     
     return 0;

@@ -92,9 +92,7 @@ void BusFault_Handler(void)
 {
   uint32_t cfsr = SCB->CFSR;
   uint32_t bfar = SCB->BFAR;
-
   DEBUG_PRINT("BusFault! CFSR=0x%08lX, BFAR=0x%08lX\r\n", cfsr, bfar);
-
   while (1) {}
 }
 
