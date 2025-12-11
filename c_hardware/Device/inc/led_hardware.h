@@ -1,21 +1,20 @@
-#ifndef __HARDWARE_INIT_H__
-#define __HARDWARE_INIT_H__
+#ifndef __LED_HW_H__
+#define __LED_HW_H__
 
 /* ====================================== INCLUDE HEADER =============================== */
 #include "stm32f10x.h"
-#include "systick.h"
-#include "tty_hardware.h"
-#include "w25q32_hardware.h"
-#include "a7670c_hardware.h"
-#include "led_hardware.h"
 /* ===================================================================================== */
 
 /* ====================================== DEFINE ======================================= */
-/* ===================================================================================== */
+#define LED_ONBOARD_GPIO_PORT          GPIOC
+#define LED_ONBOARD_PIN                GPIO_Pin_13
 
+#define LED_RCC_GPIO           RCC_APB2Periph_GPIOC
+                           
+/* ===================================================================================== */
 
 /* ====================================== API ========================================== */
-void hardware_init(void);
+void led_hardware_init(void);
 /* ===================================================================================== */
 
-#endif /* __HARDWARE_INIT_H__ */
+#endif /* __LED_HW_H__ */

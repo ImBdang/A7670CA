@@ -97,6 +97,7 @@ DEV_SRC := \
 	$(DEVICE_DIR)/src/tiny_printf.c \
 	$(DEVICE_DIR)/src/tty_hardware.c \
 	$(DEVICE_DIR)/src/w25q32_hardware.c \
+	$(DEVICE_DIR)/src/led_hardware.c \
 	$(DEVICE_DIR)/src/systick.c
 
 # Hardware sources - SPL (Standard Peripheral Library)

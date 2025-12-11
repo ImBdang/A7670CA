@@ -20,6 +20,8 @@ int main(void)
     a7670c_hardware_init();
     gsm_init();
     DEBUG_PRINT("APP RUN\r\n");
+    // GPIO_ResetBits(GPIOC, GPIO_Pin_13);
+    GPIO_SetBits(GPIOC, GPIO_Pin_13);
     while(1){
         bool tmp = false;
         GSM_Manager();
