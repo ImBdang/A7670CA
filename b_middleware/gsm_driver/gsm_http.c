@@ -236,6 +236,7 @@ bool gsm_http_action(uint8_t action)
 
 bool gsm_http_read(uint32_t offset, uint32_t chunk)
 {
+    DEBUG_PRINT("gsm_http_read(offset=%lu, chunk=%lu)\r\n", offset, chunk);
     static uint8_t timeout_count = 0;
     const uint8_t max_timeout = 3;
     bool tmp = false;

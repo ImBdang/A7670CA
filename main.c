@@ -67,7 +67,7 @@ current_task_t cur_task = IDLE;
 
 int main(void)
 {
-    __enable_irq();
+    SCB->VTOR = 0x08004000;
     Clock_72MHz_HSE_Init();
     hardware_init();
     a7670c_hardware_init();
@@ -77,6 +77,7 @@ int main(void)
     //GPIO_ResetBits(GPIOC, GPIO_Pin_13);
     GPIO_SetBits(GPIOC, GPIO_Pin_13);
     cur_task = 1;
+    __enable_irq();
     while(1){
         bool tmp = false;
         GSM_Manager();
