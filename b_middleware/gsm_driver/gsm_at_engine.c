@@ -69,6 +69,7 @@ static void gsm_parser_process_line(void)
         }
         if (c == '\n'){
             line_buff[line_len] = '\0';
+            // DEBUG_PRINT("RAW: %s\r\n", line_buff);
             at_line_handle(line_buff);
             line_len = 0;
         }

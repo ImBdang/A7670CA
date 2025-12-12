@@ -228,7 +228,6 @@ void GSM_Manager(void)
             break;
         }
     }
-    delay_ms(150);
 }
 
 void gsm_init(void)

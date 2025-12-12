@@ -58,23 +58,6 @@ void W25Q32_CheckFirmware(uint32_t fw_size)
     DEBUG_PRINT("========== END CHECK ==========\r\n\r\n");
 }
 
-extern uint32_t __stack_chk;
-
-void dbg_dump_sp(void)
-{
-    register uint32_t sp_val __asm("sp");
-    static uint32_t last = 0;
-
-    if ((sp_val & 0xFF000000) != 0x20000000) {
-        DEBUG_PRINT("SP CORRUPT!!! sp=0x%08lX\r\n", sp_val);
-        while (1);
-    }
-
-    if (last == 0) {
-        last = sp_val;
-    }
-}
-
 current_task_t cur_task = IDLE;
 
 /* ====================================== EXTERNAL VARIABLES ======================================= */
@@ -82,22 +65,23 @@ current_task_t cur_task = IDLE;
 
 int main(void)
 {
-    uint32_t app_sp;
-    app_sp = *(uint32_t*)0x08004000; // đọc MSP thật
-    __set_MSP(app_sp);
+    __enable_irq();
+    // uint32_t app_sp;
+    // app_sp = *(uint32_t*)0x08004000; 
+    // __set_MSP(app_sp);
     SCB->VTOR = 0x08004000;
     Clock_72MHz_HSE_Init();
     hardware_init();
     a7670c_hardware_init();
     gsm_init();
-    DEBUG_PRINT("APP RUN\r\n");
+
     // W25Q32_CheckFirmware(21512);
     //GPIO_ResetBits(GPIOC, GPIO_Pin_13);
     GPIO_SetBits(GPIOC, GPIO_Pin_13);
-    cur_task = 1;
-    __enable_irq();
+    cur_task = 0;
+
+    DEBUG_PRINT("APP RUN\r\n");
     while(1){
-        dbg_dump_sp();
         bool tmp = false;
         GSM_Manager();
         if (gsm_state == GSM_STATE_READY)
@@ -111,8 +95,9 @@ int main(void)
                 case IDLE:
                     break;
             }
-            delay_ms(150);
+        
         }
+        delay_ms(250);
     }
     
     return 0;
