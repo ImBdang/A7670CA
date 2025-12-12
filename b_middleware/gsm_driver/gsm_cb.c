@@ -37,3 +37,33 @@ void at_basic_cb(gsm_cmd_state_t resp_state, const char *resp, uint8_t)
         }
     }   
 }
+
+void at_simple_cb(gsm_cmd_state_t resp_state, const char *resp, uint8_t len)
+{
+    (void)resp;
+    (void)len;
+
+    event_t event;
+
+    switch (resp_state)
+    {
+    case GSM_CMD_STATE_OK:
+        event.response = EVT_OK;
+        DEBUG_PRINT("<!>: EVENT OK\r\n");
+        break;
+
+    case GSM_CMD_STATE_ERR:
+        event.response = EVT_ERR;
+        DEBUG_PRINT("<!>: EVENT ERROR\r\n");
+        break;
+
+    case GSM_CMD_STATE_TIMEOUT:
+        event.response = EVT_TIMEOUT;
+        DEBUG_PRINT("<!>: EVENT TIMEOUT\r\n");
+        break;
+
+    default:
+        return;
+    }
+}
+

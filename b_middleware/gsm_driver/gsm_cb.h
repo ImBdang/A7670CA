@@ -24,6 +24,8 @@
 
 /* ====================================== API DECLARATIONS ==================================== */
 void at_basic_cb(gsm_cmd_state_t resp_state, const char *resp, uint8_t len);
+
+void at_simple_cb(gsm_cmd_state_t resp_state, const char *resp, uint8_t len);
 /* ============================================================================================ */
 
 

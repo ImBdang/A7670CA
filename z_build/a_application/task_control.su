@@ -1,0 +1,3 @@
+a_application/task_control.c:5:6:set_cur_task	16	static
+a_application/task_control.c:10:16:get_cur_task	4	static
+a_application/task_control.c:15:6:task_busy	4	static

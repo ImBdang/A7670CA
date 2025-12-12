@@ -7,7 +7,7 @@
 #include "stdbool.h"
 #include "string.h"
 
-#include "task_config.h"
+#include "task_control.h"
 
 #include "systick.h"
 #include "debugger.h"

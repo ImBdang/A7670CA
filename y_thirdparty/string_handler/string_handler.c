@@ -124,3 +124,11 @@ uint32_t gsm_parse_httpread_len(const char *line)
         line++;
     return fast_atoi(line);
 }
+
+uint8_t new_sms_dispatch(const char *s)
+{
+    const char *p = strrchr(s, ',');
+    if (!p) return 0;
+    return (uint8_t)fast_atoi(p + 1);
+}
+

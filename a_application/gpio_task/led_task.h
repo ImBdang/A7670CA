@@ -5,7 +5,7 @@
 #include "stm32f10x.h"
 #include "stdint.h"
 
-#include "task_config.h"
+#include "task_control.h"
 
 #include "systick.h"
 #include "debugger.h"

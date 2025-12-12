@@ -1,1 +1,2 @@
 b_middleware/gsm_driver/gsm_cb.c:5:6:at_basic_cb	32	static
+b_middleware/gsm_driver/gsm_cb.c:41:6:at_simple_cb	24	static

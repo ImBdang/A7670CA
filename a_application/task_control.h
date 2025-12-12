@@ -1,8 +1,9 @@
-#ifndef __TASK_CONFIG_H__
-#define __TASK_CONFIG_H__
+#ifndef __TASK_CONTROL_H__
+#define __TASK_CONTROL_H__
 
 /* ====================================== INCLUDE HEADER =============================== */
 #include "stm32f10x.h"
+#include "stdbool.h"
 #include "debugger.h"
 /* ===================================================================================== */
 
@@ -11,12 +12,16 @@
 
 /* ====================================== TYPEDEF STRUCT ======================================= */
 typedef enum {
-    IDLE = 0,
-    OTA
+    IDLE_TASK = 0,
+    OTA_TASK,
+    GPIO_TASK
 } current_task_t;
 /* ============================================================================================= */
 
 /* ====================================== API ========================================== */
+void set_cur_task(current_task_t task);
+current_task_t get_cur_task(void);
+bool task_busy(void);
 /* ===================================================================================== */
 
 #endif /* __TASK_CONFIG_H__ */

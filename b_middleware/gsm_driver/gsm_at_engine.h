@@ -12,6 +12,7 @@
 #include "debugger.h"
 
 #include "gsm_http_typedef.h"
+#include "gsm_sms.h"
 #include "gsm_event.h"
 #include "gsm_entity.h"
 #include "gsm_typedef.h"

@@ -19,6 +19,7 @@ uint32_t parse_ota_size(const char *line);
 
 void gsm_parse_cpin(const char *line, char *status);
 void gsm_parse_creg(const char* line, char* status);
+uint8_t new_sms_dispatch(const char *s);
 
 uint32_t gsm_parse_httpread_len(const char *line);
 void gsm_parse_httpget(const char *str, uint8_t *method, uint16_t *status, uint32_t *length);

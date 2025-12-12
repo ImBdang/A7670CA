@@ -1,0 +1,7 @@
+b_middleware/gsm_driver/gsm_sms.c:17:6:set_new_sms_idx	16	static
+b_middleware/gsm_driver/gsm_sms.c:22:6:set_new_sms_content	16	static
+b_middleware/gsm_driver/gsm_sms.c:28:6:send_sms	16	static
+b_middleware/gsm_driver/gsm_sms.c:33:6:delete_sms	392	static
+b_middleware/gsm_driver/gsm_sms.c:54:6:read_sms	392	static
+b_middleware/gsm_driver/gsm_sms.c:148:6:check_sms	16	static
+b_middleware/gsm_driver/gsm_sms.c:170:6:gsm_common_delete_all_sms	352	static

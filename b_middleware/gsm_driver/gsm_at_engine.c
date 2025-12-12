@@ -4,7 +4,9 @@ extern lwrb_t at_rb;
 extern uint8_t http_data_buff[HTTP_DATA_BUFFER];
 extern http_state_t http_state;
 extern uint32_t http_reading_chunk;
-extern http_action_entity_t http_action_entity; 
+extern http_action_entity_t http_action_entity;
+
+extern sms_state_t sms_state;
 
 /* ====================================== STATIC DECLARATIONS ======================================= */
 uint8_t* http_buff_ptr = http_data_buff;
@@ -70,7 +72,39 @@ static void gsm_parser_process_line(void)
         if (c == '\n'){
             line_buff[line_len] = '\0';
             // DEBUG_PRINT("RAW: %s\r\n", line_buff);
-            at_line_handle(line_buff);
+            if (sms_state == SMS_READING)
+            {
+                breakp();
+                size_t len = strlen((char *)line_buff);
+                if (len <= 2)   
+                {
+                    line_len = 0;
+                    return;
+                }
+                if (strcmp((char *)line_buff, "OK\r\n") == 0 ||
+                    strcmp((char *)line_buff, "OK") == 0)
+                {
+                    sms_state = SMS_IDLE;
+                    at_line_handle((char *)line_buff);  
+                    line_len = 0;
+                    return;
+                }
+
+                set_new_sms_content((char *)line_buff);
+                DEBUG_PRINT("SMS CONTENT: %s\r\n", line_buff);
+                check_sms((char *)line_buff);
+
+                sms_state = SMS_IDLE;
+
+                line_len = 0;
+                return;
+            }
+
+    
+            else 
+            {
+                at_line_handle(line_buff);
+            }
             line_len = 0;
         }
     }
@@ -282,6 +316,27 @@ void at_urc_handle(const char* line)
         }
         http_state = HTTP_BUSY;
     }
+
+    if (strncmp(line, "+CMTI:", 6) == 0) 
+    {
+        uint8_t idx = 0;
+        idx = new_sms_dispatch(line);
+        DEBUG_PRINT("New SMS RECEIVED, INDEX IS: %u\r\n", idx);
+        set_new_sms_idx(idx);
+        read_sms(idx);
+        delete_sms(idx);
+    }
+
+    if (strncmp(line, "+CMGR:", 6) == 0) 
+    {
+        sms_state = SMS_READING;
+    }
+
+    if (strncmp(line, "+SMS FULL", 9) == 0)
+    {
+
+    }
+
 }
 
 
