@@ -2927,9 +2927,8 @@ Discarded input sections
 Memory Configuration
 
 Name             Origin             Length             Attributes
-FLASH            0x08004000         0x0000c000         xr
 RAM              0x20001000         0x00004000         xrw
-MEMORY_B1        0x60000000         0x00000000         xr
+FLASH            0x08004000         0x00010000         xr
 *default*        0x00000000         0xffffffff
 
 Linker script and memory map
@@ -2988,8 +2987,8 @@ END GROUP
 LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtend.o
 LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtn.o
                 0x20005000                        _estack = 0x20005000
-                0x00000000                        _Min_Heap_Size = 0x0
-                0x00000100                        _Min_Stack_Size = 0x100
+                0x00000200                        _Min_Heap_Size = 0x200
+                0x00000400                        _Min_Stack_Size = 0x400
 
 .isr_vector     0x08004000      0x10c
                 0x08004000                        . = ALIGN (0x4)
@@ -3593,10 +3592,11 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
  *(.fini_array*)
  .fini_array    0x08009420        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08009424                        _sidata = LOADADDR (.data)
+                0x08009424                        _sidata_app = LOADADDR (.data)
 
 .data           0x20001000      0x2bc load address 0x08009424
                 0x20001000                        . = ALIGN (0x4)
+                0x20001000                        _sdata_app = .
                 0x20001000                        _sdata = .
  *(.data)
  *(.data*)
@@ -3622,6 +3622,7 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
                 0x20001270       0x4c /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-impure.o)
                 0x20001270                _impure_data
                 0x200012bc                        . = ALIGN (0x4)
+                0x200012bc                        _edata_app = .
                 0x200012bc                        _edata = .
 
 .tm_clone_table
@@ -3636,8 +3637,9 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
                 0x200012bc                        . = ALIGN (0x4)
 
 .bss            0x200012bc      0xd2c load address 0x080096e0
+                0x200012bc                        _sbss_app = .
                 0x200012bc                        _sbss = .
-                0x200012bc                        __bss_start__ = _sbss
+                0x200012bc                        __bss_start__ = _sbss_app
  *(.bss)
  *(.bss*)
  .bss.completed.1
@@ -3726,24 +3728,20 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
                 0x20001fe4        0x4 /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
  *(COMMON)
                 0x20001fe8                        . = ALIGN (0x4)
+                0x20001fe8                        _ebss_app = .
                 0x20001fe8                        _ebss = .
-                0x20001fe8                        __bss_end__ = _ebss
+                0x20001fe8                        __bss_end__ = _ebss_app
 
 ._user_heap_stack
-                0x20001fe8      0x100 load address 0x080096e0
-                0x20001fe8                        . = ALIGN (0x4)
+                0x20001fe8      0x600 load address 0x080096e0
+                0x20001fe8                        . = ALIGN (0x8)
                 0x20001fe8                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x20001fe8                        . = (. + _Min_Heap_Size)
-                0x200020e8                        . = (. + _Min_Stack_Size)
- *fill*         0x20001fe8      0x100 
-                0x200020e8                        . = ALIGN (0x4)
-
-.memory_b1_text
- *(.mb1text)
- *(.mb1text*)
- *(.mb1rodata)
- *(.mb1rodata*)
+                0x200021e8                        . = (. + _Min_Heap_Size)
+ *fill*         0x20001fe8      0x200 
+                0x200025e8                        . = (. + _Min_Stack_Size)
+ *fill*         0x200021e8      0x400 
+                0x200025e8                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -4159,7 +4157,7 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
  .debug_macro   0x0000f581       0x28 z_build/a_application/ota_task/ota_task.o
  .debug_macro   0x0000f5a9      0x324 z_build/main.o
 
-.debug_line     0x00000000     0xb32e
+.debug_line     0x00000000     0xb32f
  .debug_line    0x00000000      0xa08 z_build/y_thirdparty/lwrb/lwrb.o
  .debug_line    0x00000a08      0x5b6 z_build/y_thirdparty/string_handler/string_handler.o
  .debug_line    0x00000fbe      0x450 z_build/c_hardware/Device/src/a7670c_hardware.o
@@ -4189,7 +4187,7 @@ LOAD /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/
  .debug_line    0x00009bec      0x83f z_build/b_middleware/gsm_driver/gsm_http.o
  .debug_line    0x0000a42b      0x757 z_build/a_application/ota_task/ota_task.o
  .debug_line    0x0000ab82      0x734 z_build/main.o
- .debug_line    0x0000b2b6       0x78 z_build/startup/startup.o
+ .debug_line    0x0000b2b6       0x79 z_build/startup/startup.o
 
 .debug_str      0x00000000    0x43d2b
  .debug_str     0x00000000    0x43d2b z_build/y_thirdparty/lwrb/lwrb.o
@@ -4790,8 +4788,8 @@ _close                                            /home/bdang/toolchains/gcc-arm
                                                   /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-closer.o)
 _close_r                                          /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-closer.o)
                                                   /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-stdio.o)
-_ebss                                             z_build/startup/startup.o
-_edata                                            z_build/startup/startup.o
+_ebss_app                                         z_build/startup/startup.o
+_edata_app                                        z_build/startup/startup.o
 _estack                                           z_build/startup/startup.o
 _exit                                             /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
                                                   /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-exit.o)
@@ -4842,9 +4840,9 @@ _sbrk                                             /home/bdang/toolchains/gcc-arm
                                                   /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-sbrkr.o)
 _sbrk_r                                           /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-sbrkr.o)
                                                   /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-mallocr.o)
-_sbss                                             z_build/startup/startup.o
-_sdata                                            z_build/startup/startup.o
-_sidata                                           z_build/startup/startup.o
+_sbss_app                                         z_build/startup/startup.o
+_sdata_app                                        z_build/startup/startup.o
+_sidata_app                                       z_build/startup/startup.o
 _sniprintf_r                                      /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
 _snprintf_r                                       /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-snprintf.o)
 _stack_init                                       /home/bdang/toolchains/gcc-arm-none-eabi-14.3/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
