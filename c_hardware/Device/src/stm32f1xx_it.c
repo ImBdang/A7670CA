@@ -62,13 +62,43 @@ void NMI_Handler(void)
   * @param  None
   * @retval None
   */
+__attribute__((naked))
 void HardFault_Handler(void)
 {
-  /* Go to infinite loop when Hard Fault exception occurs */
-  while (1)
-  {
-  }
+    __asm volatile
+    (
+        "tst lr, #4            \n"
+        "ite eq                \n"
+        "mrseq r0, msp         \n" // r0 = pointer tới stack frame
+        "mrsne r0, psp         \n"
+        "b HardFault_Handler_C \n"
+    );
 }
+
+void HardFault_Handler_C(uint32_t *stack)
+{
+    uint32_t r0  = stack[0];
+    uint32_t r1  = stack[1];
+    uint32_t r2  = stack[2];
+    uint32_t r3  = stack[3];
+    uint32_t r12 = stack[4];
+    uint32_t lr  = stack[5];       // return address
+    uint32_t pc  = stack[6];       // chỗ crash
+    uint32_t psr = stack[7];
+
+    uint32_t cfsr = SCB->CFSR;
+    uint32_t hfsr = SCB->HFSR;
+
+    DEBUG_PRINT("\r\n[HardFault]\r\n");
+    DEBUG_PRINT(" PC  = 0x%08lX\r\n", pc);
+    DEBUG_PRINT(" LR  = 0x%08lX\r\n", lr);
+    DEBUG_PRINT(" CFSR=0x%08lX HFSR=0x%08lX\r\n", cfsr, hfsr);
+    DEBUG_PRINT(" r0=0x%08lX r1=0x%08lX r2=0x%08lX r3=0x%08lX r12=0x%08lX\r\n",
+                r0, r1, r2, r3, r12);
+
+    while (1);
+}
+
 
 /**
   * @brief  This function handles Memory Manage exception.

@@ -75,7 +75,6 @@ void dbg_dump_sp(void)
     }
 }
 
-
 current_task_t cur_task = IDLE;
 
 /* ====================================== EXTERNAL VARIABLES ======================================= */
@@ -83,6 +82,9 @@ current_task_t cur_task = IDLE;
 
 int main(void)
 {
+    uint32_t app_sp;
+    app_sp = *(uint32_t*)0x08004000; // đọc MSP thật
+    __set_MSP(app_sp);
     SCB->VTOR = 0x08004000;
     Clock_72MHz_HSE_Init();
     hardware_init();
