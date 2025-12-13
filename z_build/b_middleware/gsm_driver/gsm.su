@@ -3,5 +3,5 @@ b_middleware/gsm_driver/gsm.c:33:6:gsm_is_ready	4	static
 b_middleware/gsm_driver/gsm.c:42:6:gsm_power_on	8	static
 b_middleware/gsm_driver/gsm.c:97:6:gsm_power_off	8	static
 b_middleware/gsm_driver/gsm.c:147:13:decision_state	4	static
-b_middleware/gsm_driver/gsm.c:203:6:GSM_Manager	8	static
-b_middleware/gsm_driver/gsm.c:233:6:gsm_init	8	static
+b_middleware/gsm_driver/gsm.c:209:6:GSM_Manager	8	static
+b_middleware/gsm_driver/gsm.c:247:6:gsm_init	8	static

@@ -192,6 +192,12 @@ static void decision_state(void)
         gsm_state = GSM_STATE_INIT_PDP;
         return;
     }
+    
+    /*<! STATE: INIT MQTT */
+    if (!decision_flag.mqtt_init) {
+        gsm_state = GSM_STATE_INIT_MQTT;
+        return;
+    }
 
     /*<! STATE: READY */
     if (!decision_flag.ready) {
@@ -219,7 +225,15 @@ void GSM_Manager(void)
 
         case GSM_STATE_INIT_PDP: gsm_common_init_pdp(); break;
 
-        case GSM_STATE_READY: break;
+        case GSM_STATE_INIT_MQTT: 
+            if (gsm_mqtt_start())
+            {
+                decision_flag.mqtt_init = true;
+                gsm_state = GSM_STATE_DECISION;
+            } 
+            break;
+
+        case GSM_STATE_READY: decision_state(); break;
         case GSM_STATE_ERROR:
         {
             DEBUG_PRINT("TOO MUCH TIMEOUT, ERROR STATE TRY TO CLEAR FLAGS AND RESTART\r\n");
@@ -234,3 +248,4 @@ void gsm_init(void)
 {
     lwrb_init(&at_rb, at_rb_buff, sizeof(at_rb_buff));
 }
+

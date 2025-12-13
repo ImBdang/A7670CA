@@ -5,6 +5,8 @@
 #include "a7670c_hardware.h"
 #include "systick.h"
 
+#include "gsm_mqtt.h"
+
 #include "task_control.h"
 #include "ota_task.h"
 
@@ -88,6 +90,46 @@ int main(void)
             {   
                 case OTA_TASK:
                     ota_process();
+                    break;
+
+                case MQTT_STOP:
+                    if (gsm_mqtt_stop())
+                        set_cur_task(IDLE_TASK);
+                    break;
+
+                case MQTT_CLIENT_ACQUIRE:
+                    if (gsm_mqtt_acquire_client(0, "stm32f103", true))
+                        set_cur_task(IDLE_TASK);
+                    break;
+
+                case MQTT_CLIENT_RELEASE:
+                    if (gsm_mqtt_release_client(0))
+                        set_cur_task(IDLE_TASK);
+                    break;
+
+                case MQTT_SSL_MODE:
+                    if (gsm_mqtt_sslver_config(0, 4))
+                        set_cur_task(IDLE_TASK);
+                    break;
+
+                case MQTT_TLS_CONFIG:
+                    if (gsm_mqtt_tls_config(0, 0)) 
+                        set_cur_task(IDLE_TASK);
+                    break;
+
+                case MQTT_CONNECT:
+                    if (gsm_mqtt_connect_broker(0, 60, true))
+                        set_cur_task(IDLE_TASK);
+                    break;
+
+                case MQTT_SNI:
+                    if (gsm_mqtt_sni_config(0, 1))
+                        set_cur_task(IDLE_TASK);
+                    break;
+
+                case check:
+                    if (check_internet())
+                        set_cur_task(IDLE_TASK);
                     break;
 
                 case IDLE_TASK:

@@ -31,6 +31,7 @@ void gsm_common_check_sim(void);
 void gsm_common_check_network(void);
 void gsm_common_check_gprs(void);
 void gsm_common_init_pdp(void);
+void gsm_common_init_mqtt(void);
 void gsm_common_error();
 /* ============================================================================================ */
 

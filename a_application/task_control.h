@@ -14,7 +14,16 @@
 typedef enum {
     IDLE_TASK = 0,
     OTA_TASK,
-    GPIO_TASK
+    GPIO_TASK,
+
+    MQTT_STOP,
+    MQTT_CLIENT_ACQUIRE,
+    MQTT_CLIENT_RELEASE,
+    MQTT_SSL_MODE,
+    MQTT_TLS_CONFIG,
+    MQTT_CONNECT,
+    MQTT_SNI,
+    check
 } current_task_t;
 /* ============================================================================================= */
 

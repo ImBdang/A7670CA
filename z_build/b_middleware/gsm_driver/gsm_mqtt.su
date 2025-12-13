@@ -1,0 +1,16 @@
+y_thirdparty/jsmn/jsmn.h:106:19:jsmn_alloc_token	32	static
+y_thirdparty/jsmn/jsmn.h:124:13:jsmn_fill_token	24	static
+y_thirdparty/jsmn/jsmn.h:135:12:jsmn_parse_primitive	32	static
+y_thirdparty/jsmn/jsmn.h:193:12:jsmn_parse_string	40	static
+y_thirdparty/jsmn/jsmn.h:268:14:jsmn_parse	56	static
+y_thirdparty/jsmn/jsmn.h:459:15:jsmn_init	16	static
+b_middleware/gsm_driver/gsm_mqtt.c:13:6:gsm_mqtt_start	352	static
+b_middleware/gsm_driver/gsm_mqtt.c:70:6:gsm_mqtt_stop	352	static
+b_middleware/gsm_driver/gsm_mqtt.c:128:6:gsm_mqtt_acquire_client	416	static
+b_middleware/gsm_driver/gsm_mqtt.c:193:6:gsm_mqtt_release_client	416	static
+b_middleware/gsm_driver/gsm_mqtt.c:255:6:gsm_mqtt_tls_config	416	static
+b_middleware/gsm_driver/gsm_mqtt.c:318:6:gsm_mqtt_sslver_config	416	static
+b_middleware/gsm_driver/gsm_mqtt.c:381:6:gsm_mqtt_connect_broker	488	static
+b_middleware/gsm_driver/gsm_mqtt.c:450:6:check_time	344	static
+b_middleware/gsm_driver/gsm_mqtt.c:509:6:check_internet	352	static
+b_middleware/gsm_driver/gsm_mqtt.c:568:6:gsm_mqtt_sni_config	416	static

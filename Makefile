@@ -52,6 +52,7 @@ GSM_DRV_DIR := $(MID_DIR)/gsm_driver
 # Third-party subdirectories
 LWRB_DIR    := $(THR_DIR)/lwrb
 STR_DIR     := $(THR_DIR)/string_handler
+JSMN_DIR 	:= $(THR_DIR)/jsmn
 
 ####################################
 #           INCLUDE PATHS
@@ -70,6 +71,7 @@ INCDIR := \
 	$(W25Q_DRV_DIR) \
 	$(LWRB_DIR) \
 	$(STR_DIR) \
+	$(JSMN_DIR) \
 	.
 
 ####################################

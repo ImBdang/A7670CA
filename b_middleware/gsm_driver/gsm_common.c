@@ -79,7 +79,58 @@ void gsm_common_config(void)
     bool tmp = false;
     switch (sharedStep)
     {
+
     case 0:
+    {
+        gsm_at_cmd_t at_cmd = {
+            .cmd = "AT+CTZU=1",
+            .expect = "",
+            .start_tick = get_systick(),
+            .timeout = 7000,
+            .callback = at_basic_cb
+        };
+        tmp = send_at_cmd(at_cmd);
+        if (tmp)
+        {
+            sharedStep++;
+        }
+        break;
+    }
+    case 1:
+    {   
+        event_t event;
+        if (!pop_event(&response_event_queue, &event))
+                return;
+
+        switch (event.response)
+        {
+            case EVT_OK:
+                DEBUG_PRINT("AT+CTZU=1 OK\r\n");
+                sharedStep++;
+                gsm_state = GSM_STATE_DECISION;
+                break;
+
+
+            case EVT_TIMEOUT:
+                DEBUG_PRINT("AT+CTZU=1 TIMEOUT\r\n");
+                if (sharedTimeout_count >= 3){
+                    decision_flag.error = true;
+                    sharedTimeout_count = 0;
+                }
+                gsm_state = GSM_STATE_DECISION;
+                break;
+            
+
+            case EVT_ERR:
+                DEBUG_PRINT("AT+CTZU=1 ERR\r\n");
+                sharedTimeout_count = 0;
+                decision_flag.error = true;
+                gsm_state = GSM_STATE_DECISION;
+                break;
+        }    
+    }
+
+    case 2:
     {
         gsm_at_cmd_t at_cmd = {
             .cmd = "AT+CFUN=1",
@@ -95,7 +146,7 @@ void gsm_common_config(void)
         }
         break;
     }
-    case 1:
+    case 3:
     {   
         event_t event;
         if (!pop_event(&response_event_queue, &event))
@@ -493,3 +544,4 @@ void gsm_common_init_pdp(void)
         break;
     }
 }
+

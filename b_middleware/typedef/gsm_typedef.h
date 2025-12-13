@@ -29,6 +29,8 @@ typedef enum {
 
     GSM_STATE_INIT_PDP,       
 
+    GSM_STATE_INIT_MQTT,
+
     GSM_STATE_READY,             
 
 
@@ -70,6 +72,7 @@ typedef struct {
     bool reg_network;
     bool attach_gprs;
     bool activate_pdp;
+    bool mqtt_init;
     bool error;
     bool ready;
 } gsm_decision_flag_t;

@@ -10,6 +10,7 @@
 #include "debugger.h"
 #include "lwrb.h"
 
+#include "gsm_mqtt.h"
 #include "gsm_typedef.h"
 #include "gsm_at_engine.h"
 #include "gsm_event.h"
