@@ -6,3 +6,5 @@ y_thirdparty/string_handler/string_handler.c:72:6:gsm_parse_creg	24	static
 y_thirdparty/string_handler/string_handler.c:96:6:gsm_parse_httpget	24	static
 y_thirdparty/string_handler/string_handler.c:116:10:gsm_parse_httpread_len	16	static
 y_thirdparty/string_handler/string_handler.c:128:9:new_sms_dispatch	24	static
+y_thirdparty/string_handler/string_handler.c:137:9:mqtt_parse_rxtopic_len	32	static
+y_thirdparty/string_handler/string_handler.c:169:9:mqtt_parse_rxpayload_len	32	static

@@ -23,6 +23,9 @@ uint8_t new_sms_dispatch(const char *s);
 
 uint32_t gsm_parse_httpread_len(const char *line);
 void gsm_parse_httpget(const char *str, uint8_t *method, uint16_t *status, uint32_t *length);
+
+uint8_t mqtt_parse_rxtopic_len(const char *line);
+uint8_t mqtt_parse_rxpayload_len(const char *line);
 /* ============================================================================================= */
 
 #endif /* __STRING_HANDLER_H__ */

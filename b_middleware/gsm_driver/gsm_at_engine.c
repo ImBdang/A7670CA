@@ -1,10 +1,14 @@
 #include "gsm_at_engine.h"
 
+char promt_want_to_send[64];
+
 extern lwrb_t at_rb;
 extern uint8_t http_data_buff[HTTP_DATA_BUFFER];
 extern http_state_t http_state;
 extern uint32_t http_reading_chunk;
 extern http_action_entity_t http_action_entity;
+
+extern uint8_t mqtt_data_buff[128];
 
 extern sms_state_t sms_state;
 
@@ -14,11 +18,20 @@ uint8_t* http_buff_ptr = http_data_buff;
 static bool is_busy = false;
 static gsm_at_cmd_t executing_cmd;
 
+static bool mqtt_wait_payload = false;
+static bool mqtt_wait_topic = false;
+static uint8_t mqtt_data_collect_len = 0;
+
 static void gsm_parser_process_line(void);
 static void at_line_handle(const char* line);
 static void at_response_handle(const char* line);
 static void at_urc_handle(const char* line);
 /* ================================================================================================== */
+
+void set_promt_want_to_send(const char* promt)
+{
+    snprintf(promt_want_to_send, sizeof(promt_want_to_send), "%s", promt);
+}
 
 void gsm_at_process(void)
 {
@@ -65,16 +78,53 @@ static void gsm_parser_process_line(void)
             continue; 
         }
 
+        /*<! SET BY URC MQTTRX */
+        if (mqtt_data_collect_len != 0)
+        {
+            mqtt_data_buff[line_len++] = c;
+            mqtt_data_collect_len--;
+
+            if (mqtt_data_collect_len == 0)
+            {
+                mqtt_data_buff[line_len] = '\0';
+
+                if (mqtt_wait_topic)
+                {
+                    DEBUG_PRINT("MQTT TOPIC: %s\r\n", mqtt_data_buff);
+                    mqtt_wait_topic = false;
+                }
+
+                if (mqtt_wait_payload)
+                {
+                    DEBUG_PRINT("MQTT PAYLOAD: %s\r\n", mqtt_data_buff);
+                    mqtt_wait_payload = false;
+                }
+
+                line_len = 0; 
+            }
+            continue;
+        }
+
+        
+        /*<! WHEN WANT TO SEND DATA */
+        if (c == '>')
+        {
+            usart_sendstring(A7670C_USART, promt_want_to_send);
+            usart_sendstring(A7670C_USART, "\r\n");
+            DEBUG_PRINT(">> %s\r\n", promt_want_to_send);
+            return;
+        }
+
         if (line_len < sizeof(line_buff) - 1){
             if (c != 0xFF)
                 line_buff[line_len++] = c;
         }
         if (c == '\n'){
             line_buff[line_len] = '\0';
-            DEBUG_PRINT("RAW: %s\r\n", line_buff);
+            DEBUG_PRINT("RAW RESPONSE: %s\r\n", line_buff);
             if (sms_state == SMS_READING)
             {
-                breakp();
+
                 size_t len = strlen((char *)line_buff);
                 if (len <= 2)   
                 {
@@ -332,9 +382,18 @@ void at_urc_handle(const char* line)
         sms_state = SMS_READING;
     }
 
-    if (strncmp(line, "+SMS FULL", 9) == 0)
+    if (strncmp(line, "+CMQTTRXTOPIC:", 14) == 0)
     {
+        uint8_t topic_len = mqtt_parse_rxtopic_len(line);
+        mqtt_wait_topic = true;
+        mqtt_data_collect_len += topic_len;
+    }
 
+    if (strncmp(line, "+CMQTTRXPAYLOAD:", 16) == 0)
+    {
+        uint8_t payload_len = mqtt_parse_rxpayload_len(line);
+        mqtt_wait_payload = true;
+        mqtt_data_collect_len += payload_len;
     }
 
 }

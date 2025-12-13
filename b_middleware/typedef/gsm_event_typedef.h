@@ -21,6 +21,7 @@ typedef enum {
     EVT_OK = 0,
     EVT_ERR,
     EVT_TIMEOUT,
+    EVT_PRIMARY
 } response_event_t;
 
 typedef enum {

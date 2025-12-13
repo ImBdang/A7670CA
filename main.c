@@ -63,7 +63,7 @@
 /* ====================================== EXTERNAL VARIABLES ======================================= */
 /* ================================================================================================= */
 
-
+extern char promt_want_to_send[64];
 
 int main(void)
 {
@@ -97,8 +97,15 @@ int main(void)
                         set_cur_task(IDLE_TASK);
                     break;
 
-                case MQTT_SUB:
+                case MQTT_STOP:
+                    if (gsm_mqtt_close(0))
+                        set_cur_task(IDLE_TASK);
+                    break;
 
+
+                case MQTT_SUB:
+                    if (gsm_mqtt_sub(0, 24, 1))
+                        set_cur_task(IDLE_TASK);
                     break;
 
                 case IDLE_TASK:

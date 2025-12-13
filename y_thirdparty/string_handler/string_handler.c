@@ -132,3 +132,70 @@ uint8_t new_sms_dispatch(const char *s)
     return (uint8_t)fast_atoi(p + 1);
 }
 
+
+//+CMQTTRXTOPIC: <client>,<len>
+uint8_t mqtt_parse_rxtopic_len(const char *line)
+{
+    const char *p = line;
+
+    const char *prefix = "+CMQTTRXTOPIC:";
+    uint8_t prefix_len = strlen(prefix);
+
+    if (strncmp(p, prefix, prefix_len) != 0)
+        return 0;
+
+    p += prefix_len;
+
+    while (*p == ' ') p++;
+    while (*p >= '0' && *p <= '9')
+        p++;
+
+    if (*p != ',')
+        return 0;
+
+    p++; 
+
+    uint16_t len = 0;
+    while (*p >= '0' && *p <= '9') {
+        len = len * 10 + (*p - '0');
+        p++;
+    }
+
+    return (uint8_t)len;
+}
+
+
+    // format: +CMQTTRXPAYLOAD: <client>,<len>
+uint8_t mqtt_parse_rxpayload_len(const char *line)
+{
+    const char *p = line;
+
+    const char *prefix = "+CMQTTRXPAYLOAD:";
+    uint8_t prefix_len = strlen(prefix);
+
+    if (strncmp(p, prefix, prefix_len) != 0)
+        return 0;
+
+    p += prefix_len;
+
+    while (*p == ' ') p++;
+
+    while (*p >= '0' && *p <= '9')
+        p++;
+
+    if (*p != ',')
+        return 0;
+
+    p++;
+
+    uint16_t len = 0;
+    while (*p >= '0' && *p <= '9') {
+        len = len * 10 + (*p - '0');
+        p++;
+    }
+
+    return (uint8_t)len;
+}
+
+
+

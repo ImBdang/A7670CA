@@ -17,13 +17,13 @@
 
 
 /* ====================================== TYPEDEF STRUCT ======================================= */
+/*<! STRUCT STATUS FOR SIM */
 typedef enum {
     SIM_READY = 0,
     SIM_PIN,
     SIM_PUK,
     SIM_UNKNOW
 } gsm_sim_state_t;
-
 typedef enum {
     CREG_NOT_REGISTERED,        // 0,0
     CREG_REGISTERED_HOME,       // 0,1
@@ -35,15 +35,13 @@ typedef enum {
     CREG_REGISTERED_SMS_ROAM    // 0,7
 } gsm_sim_creg_state_t;
 
-
 typedef struct {
     char iccid[24];  
     gsm_sim_state_t state;
     gsm_sim_creg_state_t creg;
 } sim_entity_t;
 
-
-
+/*<! STRUCT DATA FOR HTTP */
 typedef struct {
     uint16_t status_code;
     uint32_t data_length;
@@ -53,6 +51,12 @@ typedef struct {
     uint8_t read_done;
     uint8_t post_done;
 } http_action_entity_t;
+
+
+/*<! STRUCT DATA FOR MQTT */
+typedef struct {
+    
+} mqtt_entity_t;
 
 /* ============================================================================================= */
 
