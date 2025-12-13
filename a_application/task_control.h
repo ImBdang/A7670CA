@@ -16,13 +16,9 @@ typedef enum {
     OTA_TASK,
     GPIO_TASK,
 
+    MQTT_START,
     MQTT_STOP,
-    MQTT_CLIENT_ACQUIRE,
-    MQTT_CLIENT_RELEASE,
-    MQTT_SSL_MODE,
-    MQTT_TLS_CONFIG,
-    MQTT_CONNECT,
-    MQTT_SNI,
+    MQTT_SUB,
     check
 } current_task_t;
 /* ============================================================================================= */
